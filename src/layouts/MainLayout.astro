@@ -1,0 +1,36 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+import { ViewTransitions } from 'astro:transitions';
+
+import TopNav from '../components/astro/nav/TopNav.astro';
+import BottomNav from '../components/astro/nav/BottomNav.astro';
+import '@fontsource/material-icons';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<ViewTransitions />
+		<title>{title}</title>
+	</head>
+	<body>
+		<!--Show on large screens -->
+		<div class="hidden lg:block">
+			<TopNav />
+		</div>
+		<slot />
+		<!--Show on small screens -->
+		<div class="lg:hidden">
+			<BottomNav />
+		</div>
+	</body>
+</html>
