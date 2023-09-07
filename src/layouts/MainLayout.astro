@@ -27,7 +27,9 @@ import '@fontsource/material-icons';
 		<div class="hidden lg:block">
 			<DesktopNav />
 		</div>
-		<slot />
+		<div class="fade-in">
+			<slot />
+		</div>
 		<!--Show on small screens -->
 		<div class="lg:hidden">
 			<MobileNav />
@@ -46,6 +48,6 @@ import '@fontsource/material-icons';
 		}
 	}
 	.fade-in {
-		animation: fadeIn 0.3s ease-out;
+		animation: fadeIn 0.5s ease-out;
 	}
 </style>
