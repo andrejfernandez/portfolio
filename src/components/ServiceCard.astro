@@ -1,6 +1,24 @@
 ---
 // Types
-import type { Service } from '../utils/services'; 
+import type { Service } from '../utils/services';
+import { Image } from 'astro:assets';
 
-
+type Props = Service;
+// Props
+const { id, image, title, description, tags } = Astro.props;
 ---
+
+<div id=`card-${id}` class="card w-96 h-96 bg-base-100 shadow-xl my-4 md:my-0 md:mx-4">
+	<figure>
+		<Image src={image} alt="logo" />
+	</figure>
+	<div class="card-body">
+		<h2 class="card-title">
+			{title}
+		</h2>
+		<p>{description}</p>
+		<div class="card-actions justify-end">
+			{tags.map((tag) => <div class="badge badge-outline">{tag}</div>)}
+		</div>
+	</div>
+</div>

@@ -1,4 +1,4 @@
-import placeholder from '../images/astro-logo-dark.svg';
+import placeholder from '../images/astro.jpg';
 
 export interface Service {
 	id: number;
