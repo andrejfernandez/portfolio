@@ -14,20 +14,20 @@ export const services: Service[] = [
 		image: placeholder,
 		title: 'Personal & Business Websites',
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-		tags: ['HTML', 'CSS', 'JavaScript', 'Svelte']
+		tags: ['Astro', 'Svelte']
 	},
 	{
 		id: 1,
 		image: placeholder,
 		title: 'Portfolios & Blogs',
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-		tags: ['HTML', 'CSS', 'JavaScript', 'Svelte']
+		tags: ['Astro', 'Svelte']
 	},
 	{
 		id: 2,
 		image: placeholder,
 		title: 'E-Commerce Websites',
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-		tags: ['HTML', 'CSS', 'JavaScript', 'Svelte']
+		tags: ['Astro', 'Svelte']
 	}
 ];
