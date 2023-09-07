@@ -1,0 +1,56 @@
+<div class="fixed z-30">
+	<div class="flex items-center justify-between slide-in-left">
+		<h1 class="text-5xl lg:text-8xl">Hi,</h1>
+		<h1 class="text-5xl lg:text-8xl ml-4">I'm Andre <span class="wave z-10">👋</span></h1>
+	</div>
+	<p class="mt-2 ml-4 text-xl lg:text-3xl float-left slide-in-bottom">Full-Stack Web Developer</p>
+</div>
+
+<style>
+	@keyframes slideInFromLeft {
+		from {
+			opacity: 0;
+			transform: translateX(-20%);
+		}
+		to {
+			opacity: 100;
+			transform: translateX(0);
+		}
+	}
+	@keyframes slideInFromBottom {
+		from {
+			opacity: 0;
+			transform: translateY(50%);
+		}
+		to {
+			opacity: 100;
+			transform: translateY(0);
+		}
+	}
+
+	.slide-in-left {
+		opacity: 0;
+		animation: slideInFromLeft 0.5s forwards ease-out;
+	}
+	.slide-in-bottom {
+		opacity: 0;
+		animation: slideInFromBottom 0.5s forwards ease-out;
+		animation-delay: 0.5s;
+	}
+
+	@keyframes waveAnimation {
+		0%,
+		100% {
+			transform: rotate(10deg);
+		}
+		50% {
+			transform: rotate(-10deg);
+		}
+	}
+
+	.wave {
+		display: inline-block;
+		animation: waveAnimation 2s infinite;
+		transform-origin: 70% 70%; /* Adjust this value to get the desired pivot point */
+	}
+</style>

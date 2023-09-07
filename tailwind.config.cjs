@@ -7,7 +7,7 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				sans: ['Roboto', ...defaultTheme.fontFamily.sans],
-				icons: ['Material Icons']
+				icons: ['Material Icons', ...defaultTheme.fontFamily.sans]
 			}
 		}
 	},

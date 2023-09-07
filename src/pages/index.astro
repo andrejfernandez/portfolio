@@ -1,10 +1,10 @@
 ---
 import Layout from '../layouts/MainLayout.astro';
-import Greeting from '../components/svelte/Greeting.svelte';
+import Greeting from '../components/astro/Greeting.astro';
 ---
 
 <Layout title="Home">
 	<div class="min-h-screen flex flex-col items-center justify-center">
-		<Greeting client:only="svelte" />
+		<Greeting />
 	</div>
 </Layout>

@@ -6,8 +6,8 @@ interface Props {
 const { title } = Astro.props;
 import { ViewTransitions } from 'astro:transitions';
 
-import TopNav from '../components/astro/nav/TopNav.astro';
-import BottomNav from '../components/astro/nav/BottomNav.astro';
+import DesktopNav from '../components/astro/nav/DesktopNav.astro';
+import MobileNav from '../components/astro/nav/MobileNav.astro';
 import '@fontsource/material-icons';
 ---
 
@@ -25,12 +25,12 @@ import '@fontsource/material-icons';
 	<body>
 		<!--Show on large screens -->
 		<div class="hidden lg:block">
-			<TopNav />
+			<DesktopNav />
 		</div>
 		<slot />
 		<!--Show on small screens -->
 		<div class="lg:hidden">
-			<BottomNav />
+			<MobileNav />
 		</div>
 	</body>
 </html>
