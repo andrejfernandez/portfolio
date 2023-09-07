@@ -7,6 +7,7 @@
 </div>
 
 <style>
+	/* Animation */
 	@keyframes slideInFromLeft {
 		from {
 			opacity: 0;
@@ -27,17 +28,6 @@
 			transform: translateY(0);
 		}
 	}
-
-	.slide-in-left {
-		opacity: 0;
-		animation: slideInFromLeft 0.5s forwards ease-out;
-	}
-	.slide-in-bottom {
-		opacity: 0;
-		animation: slideInFromBottom 0.5s forwards ease-out;
-		animation-delay: 0.5s;
-	}
-
 	@keyframes waveAnimation {
 		0%,
 		100% {
@@ -46,6 +36,17 @@
 		50% {
 			transform: rotate(-10deg);
 		}
+	}
+
+	/* Class Style */
+	.slide-in-left {
+		opacity: 0;
+		animation: slideInFromLeft 0.5s forwards ease-out;
+	}
+	.slide-in-bottom {
+		opacity: 0;
+		animation: slideInFromBottom 0.5s forwards ease-out;
+		animation-delay: 0.5s;
 	}
 
 	.wave {

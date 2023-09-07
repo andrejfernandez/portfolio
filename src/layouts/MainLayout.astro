@@ -4,10 +4,10 @@ interface Props {
 }
 
 const { title } = Astro.props;
-import { ViewTransitions } from 'astro:transitions';
+// import { ViewTransitions } from 'astro:transitions';
 
-import DesktopNav from '../components/astro/nav/DesktopNav.astro';
-import MobileNav from '../components/astro/nav/MobileNav.astro';
+import DesktopNav from '../components/NavDesktop.astro';
+import MobileNav from '../components/NavMobile.astro';
 import '@fontsource/material-icons';
 ---
 
@@ -17,9 +17,9 @@ import '@fontsource/material-icons';
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<ViewTransitions />
+		<!-- <ViewTransitions /> -->
 		<title>{title}</title>
 	</head>
 	<body>
@@ -34,3 +34,18 @@ import '@fontsource/material-icons';
 		</div>
 	</body>
 </html>
+
+<style is:global>
+	/* Animation */
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 100;
+		}
+	}
+	.fade-in {
+		animation: fadeIn 0.3s ease-out;
+	}
+</style>
