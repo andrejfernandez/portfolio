@@ -8,6 +8,7 @@ const { title } = Astro.props;
 
 import DesktopNav from '../components/NavDesktop.astro';
 import MobileNav from '../components/NavMobile.astro';
+import MobileBanner from '../components/MobileBanner.astro';
 import '@fontsource/material-icons';
 ---
 
@@ -26,6 +27,9 @@ import '@fontsource/material-icons';
 		<!--Show on large screens -->
 		<div class="hidden lg:block">
 			<DesktopNav />
+		</div>
+		<div class="lg:hidden">
+			<MobileBanner />
 		</div>
 		<div class="fade-in">
 			<slot />
