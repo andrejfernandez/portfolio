@@ -1,8 +1,10 @@
 ---
 import Layout from '../layouts/MainLayout.astro';
-import Welcome from '../components/svelte/Welcome.svelte';
 import { services } from '../utils/services';
+
+// Components
 import Card from '../components/ServiceCard.astro';
+import Stack from '../components/svelte/Stack.svelte';
 ---
 
 <Layout title="Home">
@@ -22,10 +24,9 @@ import Card from '../components/ServiceCard.astro';
 	<!-- About -->
 	<div
 		id="about"
-		class="min-h-full lg:min-h-screen flex flex-col md:flex-row items-center justify-center fade-in my-24 md:my-auto"
+		class="min-h-full lg:min-h-screen flex flex-col md:flex-row items-center justify-around my-24 md:my-auto px-40"
 	>
-		<h1 class="text-9xl mb-8 md:mb-0 mr-0 md:mr-14">👨‍💻</h1>
-		<p class="w-5/6 md:w-1/2 text-lg md:text-xl">
+		<p class="w-5/6 md:w-1/2 text-lg md:text-xl bg-base-200 p-5 rounded-md">
 			I'm a passionate full-stack web developer with a particular love for modern web technologies.
 			My current front-end specialty lies in creating dynamic and user-friendly interfaces using <a
 				class="underline"
@@ -46,6 +47,7 @@ import Card from '../components/ServiceCard.astro';
 			<a class="underline" href="https://www.netlify.com/" target="_blank">Netlify</a>, I design and
 			implement flexible solutions that seamlessly adapt to business needs.
 		</p>
+		<Stack client:load />
 	</div>
 
 	<!-- Services -->
@@ -63,54 +65,54 @@ import Card from '../components/ServiceCard.astro';
 	>
 		<h1>Contact</h1>
 	</div>
+
+	<style>
+		/* Animation */
+		@keyframes slideInFromLeft {
+			from {
+				opacity: 0;
+				transform: translateX(-20%);
+			}
+			to {
+				opacity: 100;
+				transform: translateX(0);
+			}
+		}
+		@keyframes slideInFromBottom {
+			from {
+				opacity: 0;
+				transform: translateY(50%);
+			}
+			to {
+				opacity: 100;
+				transform: translateY(0);
+			}
+		}
+		@keyframes waveAnimation {
+			0%,
+			100% {
+				transform: rotate(10deg);
+			}
+			50% {
+				transform: rotate(-10deg);
+			}
+		}
+
+		/* Class Style */
+		.slide-in-left {
+			opacity: 0;
+			animation: slideInFromLeft 0.5s forwards ease-out;
+		}
+		.slide-in-bottom {
+			opacity: 0;
+			animation: slideInFromBottom 0.5s forwards ease-out;
+			animation-delay: 0.5s;
+		}
+
+		.wave {
+			display: inline-block;
+			animation: waveAnimation 2s infinite;
+			transform-origin: 70% 70%; /* Adjust this value to get the desired pivot point */
+		}
+	</style>
 </Layout>
-
-<style>
-	/* Animation */
-	@keyframes slideInFromLeft {
-		from {
-			opacity: 0;
-			transform: translateX(-20%);
-		}
-		to {
-			opacity: 100;
-			transform: translateX(0);
-		}
-	}
-	@keyframes slideInFromBottom {
-		from {
-			opacity: 0;
-			transform: translateY(50%);
-		}
-		to {
-			opacity: 100;
-			transform: translateY(0);
-		}
-	}
-	@keyframes waveAnimation {
-		0%,
-		100% {
-			transform: rotate(10deg);
-		}
-		50% {
-			transform: rotate(-10deg);
-		}
-	}
-
-	/* Class Style */
-	.slide-in-left {
-		opacity: 0;
-		animation: slideInFromLeft 0.5s forwards ease-out;
-	}
-	.slide-in-bottom {
-		opacity: 0;
-		animation: slideInFromBottom 0.5s forwards ease-out;
-		animation-delay: 0.5s;
-	}
-
-	.wave {
-		display: inline-block;
-		animation: waveAnimation 2s infinite;
-		transform-origin: 70% 70%; /* Adjust this value to get the desired pivot point */
-	}
-</style>

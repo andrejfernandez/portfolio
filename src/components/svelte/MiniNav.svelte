@@ -11,7 +11,7 @@
 {#if isVisible}
 	<ul
 		transition:fade
-		class="menu w-20 bg-base-200 justify-start rounded-box fixed right-10 top-1/2 transform -translate-y-1/2 rounded-md"
+		class="menu w-20 bg-base-200 justify-start rounded-box fixed right-10 top-1/2 transform -translate-y-1/2 rounded-md z-50"
 	>
 		<div class="tooltip tooltip-left tooltip-primary" data-tip="Home">
 			<li class="mb-2">
