@@ -1,16 +1,19 @@
 ---
-// Types
-import type { Service } from '../utils/services';
+// Daisy UI Card Component
+
+import type { Service } from '../../utils/services';
 import { Image } from 'astro:assets';
 
 type Props = Service;
-// Props
 const { id, image, title, description, tags } = Astro.props;
 ---
 
-<div id=`card-${id}` class="card w-4/5 md:w-96 h-96 bg-base-300 shadow-xl my-4 md:my-0 md:mx-4">
+<div
+	id=`card-${id}`
+	class="card w-4/5 md:w-96 h-96 bg-base-300 shadow-xl my-4 md:my-0 md:mx-6 hover-scale"
+>
 	<figure>
-		<Image src={image} alt="logo" />
+		<Image src={image} width={image.width} height={image.height} alt="logo" />
 	</figure>
 	<div class="card-body">
 		<h2 class="card-title">

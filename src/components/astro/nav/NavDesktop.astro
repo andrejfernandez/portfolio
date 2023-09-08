@@ -1,0 +1,27 @@
+---
+import Swap from '../../svelte/Swap.svelte';
+---
+
+<div class="h-20 ml-10 mt-10 w-2/5 m-auto bg-base-100 top-0 z-50 absolute hover-scale">
+	<div class="flex justify-between pb-1 px-5 border-b-2 border-neutral">
+		<div class="flex flex-col justify-end pb-2">
+			<h1 class="text-3xl font-bold">Andre J. Fernandez</h1>
+			<h2 class="text-xl font-medium">Full-Stack Web Developer</h2>
+		</div>
+		<div class="flex mt-auto items-end">
+			<div class="tooltip tooltip-primary tooltip-top pb-1" data-tip="My GitHub">
+				<a href="https://github.com/andrejfernandez" target="_blank" class="mt-auto"
+					><span class="font-icons text-3xl">code</span></a
+				>
+			</div>
+			<div class="tooltip tooltip-primary tooltip-top pb-1" data-tip="Connect with Me!">
+				<a href="https://www.linkedin.com/in/andrejfernandez" target="_blank" class="mt-auto mx-5"
+					><span class="font-icons text-3xl"
+						><span class="material-symbols-outlined"> person_add</span></span
+					></a
+				>
+			</div>
+			<Swap client:idle />
+		</div>
+	</div>
+</div>

@@ -6,10 +6,10 @@ interface Props {
 const { title } = Astro.props;
 // import { ViewTransitions } from 'astro:transitions';
 
-import DesktopNav from '../components/NavDesktop.astro';
-import MobileNav from '../components/NavMobile.astro';
-import MobileBanner from '../components/NavMobileBanner.astro';
-import MiniNav from '../components/svelte/MiniNav.svelte';
+import DesktopNav from '../components/astro/nav/NavDesktop.astro';
+import MobileNav from '../components/astro/nav/NavMobile.astro';
+import MobileBanner from '../components/astro/nav/NavMobileBanner.astro';
+import MiniNav from '../components/astro/nav/NavMini.astro';
 import '@fontsource/material-icons';
 ---
 
@@ -28,14 +28,12 @@ import '@fontsource/material-icons';
 		<!--Show on large screens -->
 		<div class="hidden lg:block fade-in">
 			<DesktopNav />
-			<MiniNav client:load />
+			<MiniNav />
 		</div>
 		<div class="lg:hidden">
 			<MobileBanner />
 		</div>
-		<div class="fade-in">
-			<slot />
-		</div>
+		<slot />
 		<!--Show on small screens -->
 		<div class="lg:hidden">
 			<MobileNav />
@@ -45,15 +43,22 @@ import '@fontsource/material-icons';
 
 <style is:global>
 	/* Animation */
+
+	.hover-scale {
+		@apply hover:scale-105 transform transition-transform duration-100;
+	}
 	@keyframes fadeIn {
-		from {
+		0% {
 			opacity: 0;
 		}
-		to {
+		40% {
+			opacity: 0;
+		}
+		100% {
 			opacity: 100;
 		}
 	}
 	.fade-in {
-		animation: fadeIn 0.5s ease-out;
+		animation: fadeIn 0.4s ease-in-out;
 	}
 </style>

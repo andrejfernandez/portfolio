@@ -1,24 +1,25 @@
 ---
-import Layout from '../layouts/MainLayout.astro';
-import { services } from '../utils/services';
+// Layout
+import Layout from '../layouts/Layout.astro';
 
 // Components
-import Card from '../components/ServiceCard.astro';
+import Welcome from '../components/svelte/Welcome.svelte';
 import Stack from '../components/svelte/Stack.svelte';
+import Card from '../components/astro/Card.astro';
+import ContactForm from '../components/svelte/ContactForm.svelte';
+
+// Images
+import astroImg from '../images/astro.jpg';
+import svelteImg from '../images/svelte.jpg';
+
+// Data
+import { services } from '../utils/services';
 ---
 
 <Layout title="Home">
 	<!-- Greeting -->
 	<div id="home" class="min-h-screen flex flex-col items-center justify-center">
-		<div class="relative z-30">
-			<div class="flex items-center justify-between slide-in-left">
-				<h1 class="text-5xl lg:text-8xl">Hi,</h1>
-				<h1 class="text-5xl lg:text-8xl ml-4">I'm Andre <span class="wave z-10">👋</span></h1>
-			</div>
-			<p class="mt-2 ml-4 text-xl lg:text-3xl float-left slide-in-bottom">
-				Full-Stack Web Developer!!
-			</p>
-		</div>
+		<Welcome client:idle />
 	</div>
 
 	<!-- About -->
@@ -26,7 +27,7 @@ import Stack from '../components/svelte/Stack.svelte';
 		id="about"
 		class="min-h-full lg:min-h-screen flex flex-col md:flex-row items-center justify-around my-24 md:my-auto px-40"
 	>
-		<p class="w-5/6 md:w-1/2 text-lg md:text-xl bg-base-200 p-5 rounded-md">
+		<p class="w-5/6 md:w-1/2 text-lg md:text-xl bg-base-200 p-5 rounded-md hover-scale">
 			I'm a passionate full-stack web developer with a particular love for modern web technologies.
 			My current front-end specialty lies in creating dynamic and user-friendly interfaces using <a
 				class="underline"
@@ -47,7 +48,7 @@ import Stack from '../components/svelte/Stack.svelte';
 			<a class="underline" href="https://www.netlify.com/" target="_blank">Netlify</a>, I design and
 			implement flexible solutions that seamlessly adapt to business needs.
 		</p>
-		<Stack client:load />
+		<Stack images={[astroImg, svelteImg, astroImg]} client:idle />
 	</div>
 
 	<!-- Services -->
@@ -63,56 +64,6 @@ import Stack from '../components/svelte/Stack.svelte';
 		id="contact"
 		class="min-h-screen flex flex-col md:flex-row items-center justify-start md:justify-center mb-24 md:mb-0"
 	>
-		<h1>Contact</h1>
+		<ContactForm client:idle />
 	</div>
-
-	<style>
-		/* Animation */
-		@keyframes slideInFromLeft {
-			from {
-				opacity: 0;
-				transform: translateX(-20%);
-			}
-			to {
-				opacity: 100;
-				transform: translateX(0);
-			}
-		}
-		@keyframes slideInFromBottom {
-			from {
-				opacity: 0;
-				transform: translateY(50%);
-			}
-			to {
-				opacity: 100;
-				transform: translateY(0);
-			}
-		}
-		@keyframes waveAnimation {
-			0%,
-			100% {
-				transform: rotate(10deg);
-			}
-			50% {
-				transform: rotate(-10deg);
-			}
-		}
-
-		/* Class Style */
-		.slide-in-left {
-			opacity: 0;
-			animation: slideInFromLeft 0.5s forwards ease-out;
-		}
-		.slide-in-bottom {
-			opacity: 0;
-			animation: slideInFromBottom 0.5s forwards ease-out;
-			animation-delay: 0.5s;
-		}
-
-		.wave {
-			display: inline-block;
-			animation: waveAnimation 2s infinite;
-			transform-origin: 70% 70%; /* Adjust this value to get the desired pivot point */
-		}
-	</style>
 </Layout>
