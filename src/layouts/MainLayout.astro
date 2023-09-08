@@ -9,6 +9,7 @@ const { title } = Astro.props;
 import DesktopNav from '../components/NavDesktop.astro';
 import MobileNav from '../components/NavMobile.astro';
 import MobileBanner from '../components/NavMobileBanner.astro';
+import MiniNav from '../components/svelte/MiniNav.svelte';
 import '@fontsource/material-icons';
 ---
 
@@ -23,10 +24,11 @@ import '@fontsource/material-icons';
 		<!-- <ViewTransitions /> -->
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="scroll-auto scroll-smooth overflow-auto">
 		<!--Show on large screens -->
-		<div class="hidden lg:block">
+		<div class="hidden lg:block fade-in">
 			<DesktopNav />
+			<MiniNav client:load />
 		</div>
 		<div class="lg:hidden">
 			<MobileBanner />

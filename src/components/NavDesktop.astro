@@ -1,33 +1,21 @@
 ---
-let path = Astro.url.pathname;
+import Swap from '../components/svelte/NavSwap.svelte';
 ---
 
-<div class="navbar bg-base-100 fixed top-0 z-2 px-20">
-	<div class="flex-1">
-		<a href="/portfolio/" class="text-2xl font-medium">Andre J. Fernandez</a>
-	</div>
-	<div class="flex-none">
-		<div class="tabs">
-			<a
-				href="/portfolio/"
-				class=`tab tab-bordered ${path === '/portfolio' || path === '/portfolio/' ? 'tab-active' : ''}`
-				>Home</a
+<div class="h-40 ml-10 mt-10 w-2/5 m-auto bg-base-100 top-0 z-50 absolute">
+	<div class="flex justify-between pb-3 px-5 border-b-2 border-neutral">
+		<div class="flex flex-col">
+			<h1 class="text-3xl font-bold">Andre J. Fernandez</h1>
+			<h2 class="text-xl font-medium">Full-Stack Web Developer</h2>
+		</div>
+		<div class="flex mt-auto items-end">
+			<a class="mt-auto"><span class="font-icons text-4xl">code</span></a>
+			<a class="mt-auto mx-5"
+				><span class="font-icons text-4xl"
+					><span class="material-symbols-outlined"> person_add</span></span
+				></a
 			>
-			<a
-				href="/portfolio/about"
-				class=`tab tab-bordered ${path === '/portfolio/about' || path === '/portfolio/about/'? 'tab-active' : ''}`
-				>About Me</a
-			>
-			<a
-				href="/portfolio/services"
-				class=`tab tab-bordered ${path === '/portfolio/services' || path === '/portfolio/services/' ? 'tab-active' : ''}`
-				>My Services</a
-			>
-			<a
-				href="/portfolio/contact"
-				class=`tab tab-bordered ${path === '/portfolio/contact' || path === '/portfolio/contact/' ? 'tab-active' : ''}`
-				>Contact Me</a
-			>
+			<Swap client:load />
 		</div>
 	</div>
 </div>
