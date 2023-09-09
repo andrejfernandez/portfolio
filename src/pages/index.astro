@@ -25,29 +25,31 @@ import { services } from '../utils/services';
 	<!-- About -->
 	<div
 		id="about"
-		class="min-h-full lg:min-h-screen flex flex-col md:flex-row items-center justify-around my-24 md:my-auto px-40"
+		class="min-h-full lg:min-h-screen flex flex-col md:flex-row items-center justify-center my-24 md:my-auto px-40"
 	>
-		<p class="w-5/6 md:w-1/2 text-lg md:text-xl bg-base-300 p-5 rounded-md hover-scale">
-			I'm a passionate full-stack web developer with a particular love for modern web technologies.
-			My current front-end specialty lies in creating dynamic and user-friendly interfaces using <a
-				class="underline"
-				href="https://svelte.dev/"
-				target="_blank">Svelte</a
-			>,
+		<div class="w-5/6 md:w-2/5 bg-base-300 p-5 rounded-md hover-scale mr-20">
+			<h1 class="text-2xl font-semibold mb-2 underline">About Me</h1>
+			<p class="text-lg md:text-xl">
+				I'm a passionate full-stack web developer with a particular love for modern web
+				technologies. My current front-end specialty lies in creating dynamic and user-friendly
+				interfaces using <a class="underline" href="https://svelte.dev/" target="_blank">Svelte</a>,
 
-			<a class="underline" href="https://kit.svelte.dev/" target="_blank">SvelteKit</a>, and
-			<a class="underline" href="https://astro.build/" target="_blank">Astro</a>, which are
-			cutting-edge frameworks for building highly interactive web experiences. My back-end specialty
-			delves into the robust and scalable world of cloud computing. Leveraging platforms such as
-			<a
-				class="underline"
-				href="https://azure.microsoft.com/en-us/products/app-service"
-				target="_blank">Microsoft Azure</a
-			>,
-			<a class="underline" href="https://supabase.com/" target="_blank">Supabase</a>, and
-			<a class="underline" href="https://www.netlify.com/" target="_blank">Netlify</a>, I design and
-			implement flexible solutions that seamlessly adapt to business needs.
-		</p>
+
+				<a class="underline" href="https://kit.svelte.dev/" target="_blank">SvelteKit</a>, and
+				<a class="underline" href="https://astro.build/" target="_blank">Astro</a>, which are
+				cutting-edge frameworks for building highly interactive web experiences. My back-end
+				specialty delves into the robust and scalable world of cloud computing. Leveraging platforms
+				such as
+				<a
+					class="underline"
+					href="https://azure.microsoft.com/en-us/products/app-service"
+					target="_blank">Microsoft Azure</a
+				>,
+				<a class="underline" href="https://supabase.com/" target="_blank">Supabase</a>, and
+				<a class="underline" href="https://www.netlify.com/" target="_blank">Netlify</a>, I design
+				and implement flexible solutions that seamlessly adapt to business needs.
+			</p>
+		</div>
 		<Stack images={[astroImg, svelteImg, astroImg]} client:idle />
 	</div>
 
