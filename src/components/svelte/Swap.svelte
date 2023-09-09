@@ -1,7 +1,7 @@
 <!-- Daisy UI Swap Component for Theme -->
 
 <script lang="ts">
-	let swapVal = true;
+	let swapVal = false;
 	$: theme = swapVal ? 'dark' : 'light';
 	$: tip = swapVal ? 'Light Mode' : 'Dark Mode';
 	$: if (typeof document !== 'undefined') {
